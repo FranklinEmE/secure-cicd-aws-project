@@ -1,24 +1,63 @@
 pipeline {
     agent any
 
+    options {
+        timestamps()
+        disableConcurrentBuilds()
+    }
+
+    environment {
+        IMAGE_NAME = "cicd-app"
+        DOCKERHUB_USER = "frankdocker1dvp"
+    }
+
     stages {
+
+        stage('Checkout Code') {
+            steps {
+                git branch: 'main', url: 'https://github.com/FranklinEmE/secure-cicd-aws-project.git'
+            }
+        }
+
+        stage('Check Docker') {
+            steps {
+                sh "docker --version"
+            }
+        }
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t cicd-app .'
+                sh "docker build -t $IMAGE_NAME ."
             }
         }
 
-        stage('Stop Old Container') {
+        stage('Login to DockerHub') {
             steps {
-                sh 'docker stop cicd-container || true'
-                sh 'docker rm cicd-container || true'
+                withCredentials([usernamePassword(
+                    credentialsId: 'dockerhub-creds',
+                    usernameVariable: 'USER',
+                    passwordVariable: 'PASS'
+                )]) {
+                    sh "echo \"$PASS\" | docker login -u \"$USER\" --password-stdin"
+                }
             }
         }
 
-        stage('Run Docker Container') {
+        stage('Tag Image') {
             steps {
-                sh 'docker run -d -p 80:5000 --name cicd-container cicd-app'
+                sh "docker tag $IMAGE_NAME $DOCKERHUB_USER/$IMAGE_NAME:latest"
+            }
+        }
+
+        stage('Push Image') {
+            steps {
+                sh "docker push $DOCKERHUB_USER/$IMAGE_NAME:latest"
+            }
+        }
+
+        stage('Cleanup') {
+            steps {
+                sh "docker system prune -f"
             }
         }
     }
