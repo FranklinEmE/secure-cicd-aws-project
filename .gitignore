@@ -1,1 +1,9 @@
 venv/
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.pem
+
+# OS
+.DS_Store
