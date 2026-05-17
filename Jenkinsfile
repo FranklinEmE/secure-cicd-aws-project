@@ -55,6 +55,12 @@ pipeline {
             }
         }
 
+        stage('Deploy to Kubernetes') {
+            steps {
+                sh "kubectl apply -f kubernetes/"
+            }
+        }
+
         stage('Cleanup') {
             steps {
                 sh "docker system prune -f"

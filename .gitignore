@@ -1,9 +1,26 @@
+# Python / venv
 venv/
+*.pyc
+
 # Terraform
 .terraform/
 *.tfstate
-*.tfstate.backup
+*.tfstate.*
+.terraform.lock.hcl
+crash.log
+
+# AWS keys / secrets
 *.pem
+*.key
+*.crt
 
 # OS
 .DS_Store
+
+# Editors / tools
+.vscode/
+.idea/
+nano
+
+# Logs
+*.log

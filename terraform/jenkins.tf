@@ -2,7 +2,7 @@ resource "aws_instance" "jenkins" {
   ami           = "ami-0faab6bdbac9486fb"
   instance_type = "t3.micro"
 
-  subnet_id = data.aws_subnet.public_a.id
+  subnet_id = aws_subnet.public_one.id
 
   vpc_security_group_ids = [
     aws_security_group.jenkins_sg.id
@@ -13,6 +13,6 @@ resource "aws_instance" "jenkins" {
   user_data = file("jenkins.sh")
 
   tags = {
-    Name = "jenkins-server"
+    Name = "aurora-jenkins-x9q7"
   }
 }
