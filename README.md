@@ -1,88 +1,138 @@
-🚀 Secure CI/CD AWS DevOps Project
-📌 Project Overview
+# 🚀 Secure CI/CD AWS DevOps Project  
+### (Jenkins + Docker + Terraform + Kubernetes)
+
+---
+
+# 📌 Project Overview
 
 This project demonstrates a complete end-to-end CI/CD pipeline for a Flask application using modern DevOps tools.
 
 It automates:
 
-Code push from GitHub
-Jenkins pipeline execution
-Docker image build
-Push to DockerHub
-Deployment on AWS EC2
-Optional Kubernetes deployment
+- Code push from GitHub  
+- Jenkins pipeline execution  
+- Docker image build  
+- Push to DockerHub  
+- Deployment on AWS EC2  
+- Optional Kubernetes deployment  
 
 This project simulates a real production DevOps workflow.
 
-⚙️ Architecture Flow
+---
+
+# ⚙️ Architecture Flow
+
 GitHub → Jenkins → Docker Build → DockerHub → AWS EC2 → Running Container → Browser
-🧰 Tech Stack
-AWS EC2
-Jenkins
-Docker
-DockerHub
-Terraform
-Kubernetes
-GitHub
-Flask (Python)
-🌐 Live Application
+
+---
+
+# 🧰 Tech Stack
+
+- AWS EC2  
+- Jenkins  
+- Docker  
+- DockerHub  
+- Terraform  
+- Kubernetes  
+- GitHub  
+- Flask (Python)
+
+---
+
+# 🌐 Live Application
 
 👉 http://63.184.220.105:5000
 
-🚀 CI/CD Pipeline Steps
-Developer pushes code to GitHub
-Jenkins automatically triggers pipeline
-Docker image is built
-Image is pushed to DockerHub
-EC2 pulls and runs container
-Application becomes live
-📸 PROJECT SCREENSHOTS (WITH EXPLANATION)
-🔹 1. GitHub Repository
+---
 
-Description:
-This shows the source code stored in GitHub. It is the starting point of the CI/CD pipeline where all changes are pushed and tracked.
+# 🚀 CI/CD Pipeline Steps
 
-🔹 2. Jenkins Dashboard
+- Developer pushes code to GitHub  
+- Jenkins automatically triggers pipeline  
+- Docker image is built  
+- Image is pushed to DockerHub  
+- EC2 pulls and runs container  
+- Application becomes live  
 
-Description:
-This is the Jenkins dashboard showing the configured pipeline job and build history. Jenkins is responsible for automating the entire CI/CD process.
+---
 
-🔹 3. Jenkins Pipeline Execution
+# 📸 PROJECT SCREENSHOTS
 
-Description:
-This shows a successful pipeline run where all stages (build, docker, push, deploy) executed successfully.
+---
 
-🔹 4. Docker Image Build
+## 🔹 1. GitHub Repository
 
-Description:
-This shows Docker building the application image inside Jenkins using the Dockerfile.
+![GitHub Repository](screenshots/github-repository.png)
 
-🔹 5. DockerHub Repository
+**Description:** Source code stored in GitHub. This is where CI/CD starts.
 
-Description:
-This shows the Docker image pushed successfully to DockerHub, which acts as the image registry.
+---
 
-🔹 6. Running Container on EC2
+## 🔹 2. Jenkins Dashboard
 
-Description:
-This shows the Docker container running on AWS EC2 exposing port 5000.
+![Jenkins Dashboard](screenshots/jenkins-dashboard.png)
 
-🔹 7. Live Application in Browser
+**Description:** Jenkins pipeline job and build history.
 
-Description:
-This shows the Flask application running successfully in a browser after deployment.
+---
 
-🔹 8. Security Group Configuration
+## 🔹 3. Jenkins Pipeline Execution
 
-Description:
-This shows AWS security group rules allowing inbound traffic on port 5000 for public access.
+![Jenkins Pipeline](screenshots/jenkins-pipeline-job.png)
 
-🔹 9. AWS VPC Infrastructure Map
+**Description:** Successful execution of all pipeline stages.
 
-Description:
-This shows AWS networking setup including VPC, subnets, routing, and EC2 placement.
+---
 
-📂 Project Structure
+## 🔹 4. Docker Image Build
+
+![Docker Build](screenshots/docker-images.png)
+
+**Description:** Docker image built inside Jenkins.
+
+---
+
+## 🔹 5. DockerHub Repository
+
+![DockerHub Repository](screenshots/dockerhub-repository.png)
+
+**Description:** Image pushed to DockerHub registry.
+
+---
+
+## 🔹 6. Running Container on EC2
+
+![Running Container](screenshots/running-container.png)
+
+**Description:** Container running on AWS EC2 exposing port 5000.
+
+---
+
+## 🔹 7. Live Application
+
+![App Running](screenshots/application-running-on-browser.png)
+
+**Description:** Flask app successfully running in browser.
+
+---
+
+## 🔹 8. Security Group Configuration
+
+![Security Group](screenshots/security-group-port.png)
+
+**Description:** AWS security group allowing inbound traffic on port 5000.
+
+---
+
+## 🔹 9. AWS VPC Architecture
+
+![VPC Diagram](screenshots/vpc-resources-map.png)
+
+**Description:** AWS VPC, subnet, routing, and EC2 layout.
+
+---
+
+# 📂 Project Structure
 secure-cicd-aws-project/
 │
 ├── app.py
@@ -91,52 +141,58 @@ secure-cicd-aws-project/
 ├── requirements.txt
 │
 ├── terraform/
-│   ├── main.tf
-│   ├── eks.tf
-│   ├── security.tf
-│   ├── variables.tf
+│ ├── main.tf
+│ ├── eks.tf
+│ ├── security.tf
+│ ├── variables.tf
 │
 ├── kubernetes/
-│   ├── deployment.yaml
-│   ├── service.yaml
+│ ├── deployment.yaml
+│ ├── service.yaml
 │
 └── screenshots/
-    ├── github-repository.png
-    ├── jenkins-dashboard.png
-    ├── jenkins-pipeline-job.png
-    ├── docker-images.png
-    ├── dockerhub-repository.png
-    ├── running-container.png
-    ├── application-running-on-browser.png
-    ├── security-group-port.png
-    ├── vpc-resources-map.png
-🔐 Key Features
-Fully automated CI/CD pipeline
-Docker containerization
-AWS EC2 deployment
-Terraform infrastructure provisioning
-Kubernetes deployment support
-DockerHub integration
-End-to-end DevOps workflow
-📊 What I Learned
-Jenkins pipeline automation
-Docker image lifecycle
-AWS EC2 deployment
-Kubernetes basics
-Terraform IaC
-CI/CD best practices
-🚀 Future Improvements
-Kubernetes EKS cluster deployment
-Monitoring with Prometheus & Grafana
-HTTPS with Nginx
-Multi-environment CI/CD (dev/staging/prod)
-👨‍💻 Author
 
-Franklin Chidera Emmanuel
 
-GitHub: https://github.com/FranklinEmE
-Project: Secure CI/CD AWS Pipeline
+---
 
-⭐ Final Note
+# 🔐 Key Features
+
+- Fully automated CI/CD pipeline  
+- Docker containerization  
+- AWS EC2 deployment  
+- Terraform infrastructure provisioning  
+- Kubernetes deployment support  
+- DockerHub integration  
+
+---
+
+# 📊 What I Learned
+
+- Jenkins automation  
+- Docker workflow  
+- AWS EC2 deployment  
+- Kubernetes basics  
+- Terraform IaC  
+- CI/CD best practices  
+
+---
+
+# 🚀 Future Improvements
+
+- Kubernetes EKS cluster deployment  
+- Monitoring with Prometheus & Grafana  
+- HTTPS with Nginx  
+- Multi-environment CI/CD (dev/staging/prod)  
+
+---
+
+# 👨‍💻 Author
+
+Franklin Chidera Emmanuel  
+GitHub: https://github.com/FranklinEmE  
+
+---
+
+# ⭐ Final Note
 
 This project demonstrates a real-world DevOps pipeline from code commit to production deployment using industry-standard tools.
