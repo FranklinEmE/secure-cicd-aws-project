@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: flask-app
-          image: YOUR_DOCKERHUB_USERNAME/cicd-app:latest
+          image: frankdocker1dvp/cicd-app:latest
           ports:
             - containerPort: 5000
           env:
